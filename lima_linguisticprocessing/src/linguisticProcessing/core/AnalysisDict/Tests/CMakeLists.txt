@@ -1,5 +1,5 @@
-#   Copyright 2002-2013 CEA LIST
-#    
+#   Copyright 2002-2019 CEA LIST
+#
 #   This file is part of LIMA.
 #
 #   LIMA is free software: you can redistribute it and/or modify
@@ -22,17 +22,13 @@ SET(EnhancedAnalysisDictionaryTest0_SRCS
 
 add_executable(EnhancedAnalysisDictionaryTest0 ${EnhancedAnalysisDictionaryTest0_SRCS})
 
-target_link_libraries(EnhancedAnalysisDictionaryTest0
-  lima-common
-  ${Boost_LIBRARIES} 
-  ${Qt5_LIBRARIES}
-)
+target_link_libraries(EnhancedAnalysisDictionaryTest0)
 
 add_test(NAME EnhancedAnalysisDictionaryTest0 COMMAND EnhancedAnalysisDictionaryTest0)
 
 ########### next test ###############
 
-# generate EnhancedAnalysisDictionaryTest1.cpp if it does not exist 
+# generate EnhancedAnalysisDictionaryTest1.cpp if it does not exist
 configure_file(EnhancedAnalysisDictionaryTest1-src.cpp EnhancedAnalysisDictionaryTest1.cpp @ONLY)
 
 # generate EnhancedAnalysisDictionaryTest1.cpp when EnhancedAnalysisDictionaryTest1-src.cpp is modified
@@ -53,7 +49,7 @@ SET(EnhancedAnalysisDictionaryTest1_SRCS
 
 add_executable(EnhancedAnalysisDictionaryTest1 ${EnhancedAnalysisDictionaryTest1_SRCS})
 
-target_link_libraries(EnhancedAnalysisDictionaryTest1 lima-linguisticprocessing)
+target_link_libraries(EnhancedAnalysisDictionaryTest1)
 
 add_test(NAME EnhancedAnalysisDictionaryTest1 COMMAND EnhancedAnalysisDictionaryTest1)
 
@@ -77,7 +73,7 @@ SET(DictionaryDataTest1_SRCS
 
 add_executable(DictionaryDataTest1 ${DictionaryDataTest1_SRCS})
 
-target_link_libraries(DictionaryDataTest1 lima-linguisticprocessing)
+target_link_libraries(DictionaryDataTest1)
 
 add_test(NAME DictionaryDataTest1 COMMAND DictionaryDataTest1)
 

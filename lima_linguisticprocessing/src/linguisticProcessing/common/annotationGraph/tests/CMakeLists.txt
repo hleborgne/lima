@@ -1,5 +1,5 @@
-#   Copyright 2002-2013 CEA LIST
-#    
+#   Copyright 2002-2019 CEA LIST
+#
 #   This file is part of LIMA.
 #
 #   LIMA is free software: you can redistribute it and/or modify
@@ -26,10 +26,8 @@ add_executable(AnnotationGraphTest0 ${AnnotationGraphTest0_SRCS})
 
 target_link_libraries(AnnotationGraphTest0
   lima-common-data
-  lima-common-tools
   lima-lp-annotationgraph
-  ${Boost_LIBRARIES}
-  ${Qt5_LIBRARIES}
+  Boost::unit_test_framework
 )
 
 add_test(NAME AnnotationGraphTest0 COMMAND AnnotationGraphTest0)

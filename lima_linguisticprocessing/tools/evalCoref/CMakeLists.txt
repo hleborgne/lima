@@ -1,5 +1,5 @@
-#   Copyright 2002-2013 CEA LIST
-#    
+#   Copyright 2002-2019 CEA LIST
+#
 #   This file is part of LIMA.
 #
 #   LIMA is free software: you can redistribute it and/or modify
@@ -14,42 +14,42 @@
 #
 #   You should have received a copy of the GNU Affero General Public License
 #   along with LIMA.  If not, see <http://www.gnu.org/licenses/>
+
 include_directories(${CMAKE_SOURCE_DIR}/src )
 
 ########### next target ###############
 
 SET(XmlParser_SRCS
-   preprocessCorpus.cpp
+  preprocessCorpus.cpp
 )
 
 add_executable(XmlParser ${XmlParser_SRCS})
 
-target_link_libraries(XmlParser 
+target_link_libraries(XmlParser
   lima-common-misc
-  lima-common-tools 
-  lima-common-time 
-  lima-common-data 
+  lima-common-time
+  lima-common-data
+  Boost::regex
   ${optionalLibs}
-  ${Boost_LIBRARIES}  
-  ${Qt5_LIBRARIES} 
 )
 
 install(TARGETS XmlParser DESTINATION bin
   COMPONENT runtime)
 
-
 ########### next target ###############
 
 SET(evalCoref_SRCS
-   evalCoref.cpp
+  evalCoref.cpp
 )
 
 add_executable(evalCoref ${evalCoref_SRCS})
 
-target_link_libraries(evalCoref lima-linguisticprocessing)
+target_link_libraries(evalCoref
+  Qt5::Core
+  Boost::regex
+)
 
 install(TARGETS evalCoref DESTINATION bin
   COMPONENT runtime)
-
 
 ########### install files ###############
